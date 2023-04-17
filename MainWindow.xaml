@@ -1,0 +1,199 @@
+﻿<Window x:Class="ParetoHadron.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ParetoHadron"
+        mc:Ignorable="d"
+        Title="ParetoHadronWF" Height="450" Width="896">
+
+    <!--<Window.DataContext>
+        <local:MainWindowVM/>
+    </Window.DataContext>-->
+
+    <StackPanel Margin="0,0,-269,-217">
+        
+        
+
+        
+
+        <Grid >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="120" />
+                <ColumnDefinition Width="125" />
+                <ColumnDefinition Width="115" />
+                <ColumnDefinition Width="125" />
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35" />
+                <RowDefinition Height="35" />
+                <RowDefinition Height="35" />
+            </Grid.RowDefinitions>
+            <Label
+                Grid.Row="0"
+                Grid.Column="0"
+                Content="Start Date"
+                FontWeight="Bold"
+                HorizontalAlignment="Left"
+                HorizontalContentAlignment="Left"
+                ></Label>
+            <DatePicker
+                x:Name="PickerStartDate"
+                SelectedDate="{Binding SelectedStartDate}"
+                Grid.Row="0"
+                Grid.Column="1"
+                Width="125"
+                HorizontalAlignment="Center"
+                >
+
+            </DatePicker>
+            <Label
+                Grid.Row="0"
+                Grid.Column="2"
+                Content="End Date"
+                HorizontalAlignment="Left"
+                HorizontalContentAlignment="Left"
+                FontWeight="Bold"
+                ></Label>
+            <DatePicker
+                x:Name="DatePickerEndDate"
+                SelectedDate="{Binding SelectedEndDate}"
+                Grid.Row="0"
+                Grid.Column="3"
+                Width="125"
+                HorizontalAlignment="Left">
+            </DatePicker>
+            <Label
+                Grid.Row="1"
+                Grid.Column="0"
+                Content="Start Date Selected:"
+                HorizontalAlignment="Center"
+                FontWeight="Bold"
+                ></Label>
+
+            <TextBox
+                x:Name="StartDateDisplay"
+                Grid.Row="1"
+                Background="Aqua"
+                Width="125"
+                Grid.Column="1"
+                Text= "{Binding SelectedStartDate}"
+                HorizontalAlignment="Left"
+                FontWeight="Bold" 
+                TextChanged="StartDateDisplay_TextChanged"
+                ></TextBox>
+
+            <Label
+                Grid.Row="1"
+                Grid.Column="2"
+                Content="End Date Selected:"
+                HorizontalAlignment="Center"
+                HorizontalContentAlignment="Left"
+                FontWeight="Bold"
+                ></Label>
+
+            <TextBox
+                x:Name="EndDateDisplay"
+                Grid.Row="1"
+                Grid.Column="3"
+                Background="Aqua"
+                Width="125"
+                Text = "{Binding SelectedEndDate}"
+                HorizontalAlignment="Center"
+                FontWeight="Bold" 
+                TextChanged="EndDateDisplay_TextChanged"
+                ></TextBox>
+
+            <Button
+            Grid.Row="2"
+            Grid.Column="0"
+            x:Name="btn_Start"
+            Width="100"
+            Height="25"
+            HorizontalAlignment="Left"
+            Content="Get Latest Files"
+            FontWeight="Bold"
+            Margin="0,5,0,0"
+            Click="Button_Click" />
+        </Grid>
+
+        
+
+
+        <!--<Button
+            x:Name="btn_Start"
+            Width="100"
+            Height="25"
+            HorizontalAlignment="Left"
+            Content="GET LATEST FILES"
+            Click="Button_Click" />-->
+
+        <!--<Label
+            x:Name="lbl_Done"
+            Width="100"
+            Height="25"
+            HorizontalAlignment="Left"
+            HorizontalContentAlignment="Center"
+            Content="DONE"
+            ></Label>-->
+
+        <Button
+            x:Name="btn_Summary"
+            Width="100"
+            Height="25"
+            HorizontalAlignment="Left"
+            Content="SUMMARY"
+            Command="{Binding MTFResults}"
+            Click="btn_Summary_Click" />
+        
+        
+
+       
+
+        <!--<Button
+            x:Name="btn_EOMTFDataOnly"
+            Width="100"
+            Height="25"
+            HorizontalAlignment="Left"
+            Content="UNIQUE RESULTS"
+            Click="btn_uniqueResultsIR_Click" />-->
+
+        <Button
+            x:Name="btn_EOMTFOnly"
+            Width="100"
+            Height="25"
+            HorizontalAlignment="Left"
+            Content="MTF Results"
+            Command="{Binding MTFResultsICommand}"            
+            Cursor="Hand"/>
+
+        <!--<Button
+            x:Name="btn_EOFailures"
+            Width="100"
+            Height="25"
+            HorizontalAlignment="Left"
+            Content="EO Failures"
+            Click="btn_EOFailures_Click" />-->
+        
+        <Button
+            x:Name="btn_LatestFiles"
+            Width="100"
+            Height="25"
+            HorizontalAlignment="Left"
+            Content="LatestFilesSummary"
+            Click="btn_LatestFiles_Click" />
+
+        
+
+
+
+
+
+
+
+
+
+
+    </StackPanel>
+</Window>
