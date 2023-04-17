@@ -8,17 +8,16 @@ using System.Windows.Controls;
 
 namespace ParetoHadron
 {
-
-
-    /// <summary>
+     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : Window    
     {
-        private MainWindowVM vm;
+        private MainWindowVM Vm;
         public MainWindow(MainWindowVM vm)
         {
             DataContext = vm;
+            Vm = vm;
             InitializeComponent();
         }
 

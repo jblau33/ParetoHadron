@@ -12,7 +12,8 @@ namespace ParetoHadron
 {
     public class MainWindowVM : ViewModelBase
     {
-
+        
+       
         private DateTime selectedStartDate;
         public DateTime SelectedStartDate
         {
@@ -35,16 +36,17 @@ namespace ParetoHadron
                 OnPropertyChanged("SelectedEndDate");
             }
         }
-        //public MainWindowVM()
-        //{
-        //    SelectedStartDate = DateTime.Now;
-        //    SelectedEndDate = DateTime.Now;
-        //    //getMTF = new RelayCommand(ExecuteGetMTF, CanExecuteGetMTF);
-        //}
+        public MainWindowVM()
+        {
+            SelectedStartDate = DateTime.Now;
+            SelectedEndDate = DateTime.Now;
+            //getMTF = new RelayCommand(ExecuteGetMTF, CanExecuteGetMTF);
+        }
 
         #region Relay command example 
 
         RelayCommand<MainWindowVM> MTFResultsRelayCommand;
+       
 
         public ICommand MTFResultsICommand => MTFResultsRelayCommand ?? (MTFResultsRelayCommand = new RelayCommand<MainWindowVM>(
             param => MTFResultsAction(),
@@ -52,9 +54,11 @@ namespace ParetoHadron
 
         private async Task MTFResultsAction()
         {
+            //var start = SelectedStartDate;
+            //var end = SelectedEndDate;  
             MessageBox.Show("This should show.");
-            var start = StartDateDisplay.Text;
-            var end = EndDateDisplay.Text;
+            //start = StartDateDisplay.Text;
+            //var end = EndDateDisplay.Text;
             //    start = start.Split(" ")[0];
             //    end = end.Split(" ")[0];
 

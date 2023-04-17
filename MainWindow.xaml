@@ -6,17 +6,8 @@
         xmlns:local="clr-namespace:ParetoHadron"
         mc:Ignorable="d"
         Title="ParetoHadronWF" Height="450" Width="896">
-
-    <!--<Window.DataContext>
-        <local:MainWindowVM/>
-    </Window.DataContext>-->
-
+    
     <StackPanel Margin="0,0,-269,-217">
-        
-        
-
-        
-
         <Grid >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="120" />
